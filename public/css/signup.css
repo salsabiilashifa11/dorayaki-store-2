@@ -1,0 +1,77 @@
+.login-card {
+    border-radius: 0 10px 10px 0;
+    background-color: white;
+    box-shadow: 2px 2px #C3CBD6;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    height: 100%;
+}
+
+.title {
+    border-radius: 10px 0 0 10px;
+    box-shadow: 2px 2px #C3CBD6;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #474A57;
+    padding-top: 10rem;
+    padding-left: 40px;
+    background-color: #A3D7EF;
+    height: 100%;
+}
+
+input {
+    width: 80%;
+    padding: 12px 12px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #797979;
+}
+
+.row {
+    height: 28rem;
+    margin-top: 8rem;
+}
+
+img {
+    float: right;
+    height: 200px;
+}
+
+input[type=submit] {
+    background-color: #A3D7EF;
+    margin-bottom: 20px;
+    color: #474A57;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    border: none;
+    background-color: #FEE4A7;
+}
+
+.card-title {
+    color: #474A57;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.register {
+    color: #000000;
+    font-size: 0.75rem;
+    margin-bottom: 60px;
+}
+
+.error-msg {
+    margin: 3px 0px 0px 0px;
+    font-size: small;
+    color: #FF0000;
+}

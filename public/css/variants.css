@@ -1,0 +1,102 @@
+.var-card {
+    border-radius: 0 10px 10px 0;
+    background-color: white;
+    box-shadow: 2px 2px #C3CBD6;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 5rem auto;
+    float: none;
+}
+
+input {
+    width: 80%;
+    padding: 12px 0px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #797979;
+}
+
+select {
+    width: 80%;
+    padding: 12px 0px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #797979;
+}
+
+#pic {
+    border-radius: 10px;
+    margin: 2rem auto;
+    display: none;
+    width: 50%;
+    height: 200px;
+}
+
+#picture {
+    border-radius: 10px;
+    margin: 2rem auto;
+    display: block;
+    width: 50%;
+    height: 200px;
+}
+
+input[type=submit] {
+    background-color: #A3D7EF;
+    margin-bottom: 60px;
+    color: #474A57;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    border: none;
+    background-color: #FEE4A7;
+}
+
+#stock {
+    margin-bottom: 2rem;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.upload-image {
+    padding: 0.5rem 1rem;
+    background-color: #A3D7EF;
+    color: #474A57;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 1px solid #797979;
+}
+
+.upload-image:hover {
+    border: none;
+    background-color: #FEE4A7;
+}
+
+.card-title {
+    color: #474A57;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.add-message {
+    font-size: small;
+}
+
+.last-input {
+    margin-bottom: 30px;
+}

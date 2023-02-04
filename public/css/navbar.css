@@ -1,0 +1,78 @@
+.nav {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 3.5rem;
+    line-height: normal;
+    display: block;
+    font-size: small;
+    border-bottom: 1px solid #797979;
+}
+
+.nav-title {
+  text-decoration: none;
+  text-align: center;
+  color: #474A57;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav .search-container {
+    float: right;
+    margin-right: 50px;
+}
+
+.nav input[type=text] {
+  padding: 6px;
+  margin-top: 10px;
+  font-size: 15px;
+  border: 1px solid #474A57;
+  border-radius: 10px 0 0 10px;
+}
+
+.nav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 10px;
+  margin-right: 16px;
+  font-size: 17px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 0 10px 10px 0;
+  height: 31.6px;
+}
+
+.nav .search-container button:hover {
+  background: #d1d4d4;
+}
+
+.nav input[type=submit] {
+  background-color: rgb(239, 239, 239);
+  width: fit-content;
+  float: right;
+  margin: 10px 1rem 0 0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #474A57;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.nav input[type=submit]:hover {
+  background-color: #d1d4d4;
+}
+
+.nav-logout {  
+  background-color: #F6A9BD !important;
+}
+
+.nav-logout:hover {
+  background-color: #fd8e8e !important;
+}
+
+.src-img {
+  width: 20px;
+  height: 20px;
+}

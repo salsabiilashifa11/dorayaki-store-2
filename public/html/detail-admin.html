@@ -1,0 +1,55 @@
+<head>
+    <link rel="stylesheet" href="./css/strapboot.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    {navbar_component}
+<div class="container">
+    <div class="row">
+        <div class="col-6 detail-img-col">
+            <img class="detail-img" src="./img/{product-img}" alt="">
+        </div>
+        <div class="col-6 detail-card">
+            <form action="#" method="POST">
+                <p>Product Detail</p>
+                <h2 class="product-title" id="product-title">{product-name}</h2>
+                <p class="product-sold" id="product-sold">Sold: {items-sold} items | Stock: {item-stock}</p>
+                <p class="product-price" id="product-price">{product-price}</p>
+                <p class="product-info" id="product-availability"><strong>Availability:</strong> {product-availability}</p>
+                <p class="product-info" id="product-id"><strong>Product ID:</strong> #{product-id}</p>
+                <p class="product-desc" id="product-desc">{product-desc}</p>
+                <div class="row">
+                    <div class="col-4">
+                        <form id="edit-variant-form" action="js/ajax/edit-variant.php" method="POST"></form>
+                            <input class="btn-full-size" type="submit" value="Edit detail" name="edit-detail-btn" id="edit-detail-btn">
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <form id="request-stock-form" action="js/ajax/edit-variant.php" method="POST"></form>
+                            <input class="btn-full-size" type="submit" value="Request stock" name="request-stock-btn" id="request-stock-btn">
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <form id="delete-variant-form" action="js/ajax/delete-variant.php" method="POST">
+                            <input class="btn-full-size color-red" type="submit" value="Delete" name="delete-btn" id="delete-btn">
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="./js/detail-admin.js"></script>
+<script>
+    document.getElementById("search-input").style.display = "none";
+    document.getElementById("search-button").style.display = "none";
+</script>
+<script src="./js/delete-variant.js"></script>
+<script src="./js/delete-variant.js"></script>
+</body>

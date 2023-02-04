@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DorayakiSupplierService"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://dorastore.com/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             targetNamespace="http://dorastore.com/">
+
+    <types>
+        <xsd:schema
+                targetNamespace="http://dorastore.com/">
+            <xsd:simpleType name="status">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Unconfirmed" />
+                    <xsd:enumeration value="Accepted" />
+                    <xsd:enumeration value="Declined" />
+                </xsd:restriction>
+            </xsd:simpleType>
+
+            <!---       Data Types      -->
+            <xsd:complexType name="recipe">
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int" />
+                    <xsd:element name="name" type="xsd:string" />
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="recipeList">
+                <xsd:sequence>
+                    <xsd:element name="recipes" maxOccurs="unbounded" minOccurs="0" nillable="true" type="tns:recipe" />
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="request">
+                <xsd:sequence>
+                    <xsd:element name="id" type="xsd:int" />
+                    <xsd:element name="name" type="xsd:string" />
+                    <xsd:element name="quantity" type="xsd:int" />
+                    <xsd:element name="status" type="tns:status" />
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="requestList">
+                <xsd:sequence>
+                    <xsd:element name="requests" maxOccurs="unbounded" minOccurs="0" nillable="true" type="tns:request" />
+                </xsd:sequence>
+            </xsd:complexType>
+            
+            <!-- List Recipes -->
+            <xsd:element name="getRecipesResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="code" type="xsd:int" />
+                        <xsd:element name="message" type="xsd:string" />
+                        <xsd:element name="data" type="tns:recipeList" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- Request -->
+            <xsd:element name="restockRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="recipeId" type="xsd:int" />
+                        <xsd:element name="quantity" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- Message Response -->
+            <xsd:element name="messageResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="code" type="xsd:int" />
+                        <xsd:element name="message" type="xsd:string" />
+                        <xsd:element name="data" type="tns:request" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <!-- Request Status Request -->
+            <xsd:element name="getRequestsRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="xsd:string" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="getRequestsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="code" type="xsd:int" />
+                        <xsd:element name="message" type="xsd:string" />
+                        <xsd:element name="data" type="tns:requestList" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:schema>
+    </types>
+
+    <message name="getRequests">
+        <part name="parameters" element="tns:getRequestsRequest"/>
+    </message>
+    <message name="getRequestsResponse">
+        <part name="parameters" element="tns:getRequestsResponse"/>
+    </message>
+
+    <message name="getRecipes">
+    </message>
+    <message name="getRecipesResponse">
+        <part name="parameters" element="tns:getRecipesResponse"/>
+    </message>
+
+    <message name="restockRequest">
+        <part name="parameters" element="tns:restockRequest" />
+    </message>
+    <message name="messageResponse">
+        <part name="parameters" element="tns:messageResponse"/>
+    </message>
+
+    <portType name="DorayakiSupplierService">
+        <operation name="getRecipes">
+            <input message="tns:getRecipes"/>
+            <output message="tns:getRecipesResponse"/>
+        </operation>
+
+        <operation name="getRequests">
+            <input message="tns:getRequests"/>
+            <output message="tns:getRequestsResponse"/>
+        </operation>
+
+        <operation name="restockRequest">
+            <input message="tns:restockRequest"/>
+            <output message="tns:messageResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="DorayakiSupplierServiceSOAP" type="tns:DorayakiSupplierService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+                      style="document"/>
+        <operation name="getRecipes">
+            <soap:operation
+                    soapAction="http://dorastore.com/DorayakiSupplierService/getRecipes"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+
+        <operation name="getRequests">
+            <soap:operation
+                soapAction="http://dorastore.com/DorayakiSupplierService/getRequests"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+
+        <operation name="restockRequest">
+            <soap:operation
+                    soapAction="http://dorastore.com/DorayakiSupplierService/restockRequest"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+
+    <service name="DorayakiSupplierService">
+        <port name="DorayakiSupplierServiceSOAP"
+              binding="tns:DorayakiSupplierServiceSOAP">
+            <soap:address
+                    location="http://localhost:8081/dorayakisupplierservice"/>
+        </port>
+    </service>
+</definitions>

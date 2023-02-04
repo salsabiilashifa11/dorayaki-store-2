@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="./css/strapboot.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    {navbar_component}
+<div class="container">
+    <div class="row">
+        <div class="col-8 cart-left">
+            <div class="row cart-list">
+                <div class="col-6"><p>PRODUCT DETAIL</p></div>
+                <div class="col-2"><p>QTY</p></div>
+                <div class="col-2"><p>PRICE</p></div>
+                <div class="col-2"><p>TOTAL</p></div>
+            </div>
+
+            <div class="items-container">
+                {cart-component}
+            
+            </div>  
+
+        
+            <hr>
+        </div>
+        <div class="col-4 cart-right">
+            <form action="./js/ajax/checkout.php" method="POST">
+                <h2>Order Summary</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-6 label"><p>ITEMS</p></div>
+                    <div id="total-items" class="col-6 label right-align"><p>0</p></div>
+                </div>
+
+                <label class="label" for="shipping">SHIPPING</label>
+                <select id="shipping" name="shipping">
+                    <option value="free">Free Delivery</option>
+                </select>
+                <hr>
+                <div class="row">
+                    <div class="col-6 label"><p>TOTAL COST</p></div>
+                    <div id="total-cost"class="col-6 label right-align"><p>0</p></div>
+                </div>
+                <input type="submit" value="Checkout" name="checkout" id="checkout">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-input").style.display = "none";
+    document.getElementById("search-button").style.display = "none";
+</script>
+
+<script src="{js_file}"></script>
+</body>

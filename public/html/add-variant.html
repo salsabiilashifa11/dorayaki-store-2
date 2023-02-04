@@ -1,0 +1,51 @@
+<head>
+    <link rel="stylesheet" href="./css/strapboot.css">
+    <link rel="stylesheet" href="./css/variants.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    {navbar_component}
+<div class="container">
+    <div class="col-6 var-card">
+        <form id="add-variant-form" action="js/ajax/add-variant.php" method="POST" enctype="multipart/form-data">
+            <div class="card-title">
+                <h2>Add New Variant</h2>
+            </div>
+            <!-- <input type="text" name="name" id="name" placeholder="Variant Name" required> -->
+            <select id="factory-item-name" name="factory-item-name" class="items-container">
+                {factory-item-component}
+                <option value="sample-1">Sample-1</option>
+                <option value="sample-2">Sample-2</option>
+                <option value="sample-3">Sample-3</option>
+                <option value="sample-4">Sample-4</option>
+            </select>
+            <input type="text" name="detail" id="detail" placeholder="Details" required>
+            <input type="number" min="0" name="price" id="price" placeholder="Price" required>
+            <input type="number" min="0" name="stock" id="stock" placeholder="Stocks" required>
+            <label for="image" class="upload-image">Add Image</label>
+
+            <input type="file" name="image" id="image" accept="image/*" onchange="loadFile(event)" required>
+            <img id="pic">
+            <input type="submit" value="Submit" name="signup-btn" id="submit">
+        </form>
+    </div>
+</div>
+
+<script>
+    var loadFile = function(event) {
+    	var image = document.getElementById('pic');
+    	image.src = URL.createObjectURL(event.target.files[0]);
+        image.style.display = "block";
+    };
+</script>
+<script>
+    document.getElementById("search-input").style.display = "none";
+    document.getElementById("search-button").style.display = "none";
+</script>
+<script src="./js/new-add-variant.js"></script>
+
+</body>

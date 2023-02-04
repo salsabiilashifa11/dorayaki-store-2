@@ -1,0 +1,16 @@
+<?php 
+
+session_start();
+
+require_once __DIR__ . '/../app/handlers/logout.php';
+require_once __DIR__ . '/../app/handlers/add-variant.php';
+
+$nav = file_get_contents('./html/template/navbar-admin.html');
+
+$body = file_get_contents('./html/add-variant.html');
+
+$body = str_replace('{navbar_component}', $nav, $body);
+
+echo $body;
+
+?>

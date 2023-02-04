@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/strapboot.css">
+    <link rel="stylesheet" href="./css/check-request.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    {navbar_component}
+<div class="container">
+    <h1 class="title">Requests</h1>
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Request ID</th>
+            <th scope="col">Item ID</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="items-container"></tbody>
+      </table>
+</div>
+
+<script>
+    document.getElementById("search-input").style.display = "none";
+    document.getElementById("search-button").style.display = "none";
+</script>
+
+<script src="./js/check-request.js"></script>
+</body>

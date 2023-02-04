@@ -1,0 +1,114 @@
+.detail-card {
+    flex: 1;
+    border-radius: 0 10px 10px 0;
+    background-color: white;
+    box-shadow: 2px 2px 5px #C3CBD6;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    padding: 30px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.detail-img-col {
+    flex: 1;
+    padding: 0px;
+    box-shadow: 2px 2px 5px #C3CBD6;
+}
+
+.detail-img {
+    display: table-cell;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 0px 0px 10px;
+    height: 100%
+}
+
+.detail-card .order-amount-box {
+    width: 20%;
+    margin-right: 5%;
+    padding: 10px;
+    margin-top: 30px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #797979;
+}
+
+.detail-card input {
+    width: 80%;
+    padding: 12px 0px;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #797979;
+}
+
+input[type=submit] {
+    background-color: #A3D7EF;
+    margin-bottom: 60px;
+    color: #474A57;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    border: none;
+    background-color: #FEE4A7;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+p {
+    font-size: small;
+}
+
+.btn-full-size {
+    padding: 5px 20px;
+}
+
+.color-red {
+    background-color: #F6A9BD !important;
+}
+
+.color-red:hover {
+    background-color: #fd8e8e !important;
+}
+
+.product-title {
+    margin-bottom: 0px;
+}
+
+.product-sold {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.product-price {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.product-info {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.product-desc {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    line-height: 1.2rem;
+    text-align: left;
+}

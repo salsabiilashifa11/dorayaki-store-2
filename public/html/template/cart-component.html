@@ -1,0 +1,23 @@
+<!--Cart Item Componentd-->
+<hr>
+<div class="row cart-list cart-items">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-6">
+                <img class="cart-img" src="../public/img{product-img}" alt="">
+            </div>
+            <div class="col-6 cart-product-detail">
+                <div><p><strong>{product-name}</strong></p></div>
+                <div><p>ID: #{product-id}</p></div>
+                <div><p>Stock: {product-stock}</p></div>
+                <input type="submit" class="delete-item" id="delete-item" value="Remove">
+            </div>
+        </div>
+    </div>
+    <div class="col-2 qty"><p>
+        <input class="order-amount-box" type="number" min="0" name="order-amount" id="order-amount" placeholder="Amount" value={product-amount} required>
+    </p></div>
+    <div class="col-2"><p>{price}</p></div>
+    <div class="col-2"><p>{total}</p></div>
+</div>
+</hr>

@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="./css/strapboot.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    {navbar_component}
+<div class="container">
+    <div class="row">
+        <div class="col-6 detail-img-col">
+            <img class="detail-img" src="./img/{img}" alt="">
+        </div>
+        <div class="col-6 detail-card">
+            <form action="./js/ajax/add-to-cart.php" method="POST">
+                <p>Product Detail</p>
+                <h2 class="product-title" id="product-title">{product-name}</h2>
+                <p class="product-sold" id="product-sold">Sold: {items-sold} items | Stock: {item-stock}</p>
+                <p class="product-price" id="product-price">{product-price}</p>
+                <p class="product-info" id="product-availability"><strong>Availability:</strong> {product-availability}</p>
+                <p class="product-info" id="product-id"><strong>Product ID:</strong> #{product-id}</p>
+                <p class="product-desc" id="product-desc">{product-desc}</p>
+                <input style="display: none;" type="number" name="product-id-2" id="product-id-2" value={product-id} required>
+                <input class="order-amount-box" type="number" min="0" name="order-amount" id="order-amount" placeholder="Amount" required>
+                <input type="submit" value="Add to cart" name="add-to-cart-btn" id="add-to-cart">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="./js/detail-user.js"></script>
+<script>
+    document.getElementById("search-input").style.display = "none";
+    document.getElementById("search-button").style.display = "none";
+</script>
+</body>
